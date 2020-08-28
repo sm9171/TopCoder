@@ -10,7 +10,6 @@ public class KiwiJuiceEasy {
 			
 			bottles[f]-=vol;
 			bottles[t]+=vol;
-			
 		}
 		return bottles;
 	}
