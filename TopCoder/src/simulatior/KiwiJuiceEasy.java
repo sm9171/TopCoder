@@ -5,16 +5,11 @@ public class KiwiJuiceEasy {
 		for(int i= 0;i<fromId.length;i++) {
 			int f = fromId[i];
 			int t = toId[i];
-			int space = capacities[i]-bottles[i];
-			if(space>=bottles[f]) {
-				int vol=bottles[f];
-				bottles[t]+= vol;
-				bottles[f]=0;
-			}else {
-				int vol= space;
-				bottles[t]+= vol;
-				bottles[f]-=space;
-			}
+			
+			int vol =Math.min(bottles[f], capacities[t]-bottles[t]);
+			
+			bottles[f]-=vol;
+			bottles[t]+=vol;
 		}
 		return bottles;
 	}
